@@ -36,11 +36,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: __dirname + "/src/html/index.tmpl.html"
         }),
-        new uglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        }),
+        // new uglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
         new webpack.HotModuleReplacementPlugin()//热加载插件
     ],
     //服务器依赖包配置
