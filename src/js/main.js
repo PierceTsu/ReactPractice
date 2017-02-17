@@ -3,18 +3,16 @@
  */
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import {Router, Route, hashHistory} from 'react-router';
 import reducer from '../Reducer';
 import Counter from './Counter';
 import {ADD, MINUS} from '../Action/index';
-import App from '../modules/App';
-import Repos from '../modules/Repos';
-import About from '../modules/About';
+import Route from '../Config/Router'
 
-// const store = createStore(
-//     reducer
-// );
+const store = createStore(
+    reducer
+);
 const rootEl = document.getElementById('root');
 
 // const render = ()=>ReactDOM.render(
@@ -27,12 +25,9 @@ const rootEl = document.getElementById('root');
 // );
 
 const render = () => ReactDOM.render(
-    <Router history={hashHistory}>
-        <Route path="/" component={App}>
-            <Route path="/repos" component={Repos}/>
-            <Route path="/about" component={About}/>
-        </Route>
-    </Router>,
+    <Provider store={store}>
+        {Route}
+    </Provider>,
     rootEl
 );
 

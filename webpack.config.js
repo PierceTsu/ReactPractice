@@ -11,7 +11,7 @@ module.exports = {
     entry: __dirname + '/src/js/main.js',//“__dirname”是node.js中的一个全局变量，它指向当前执行脚本所在的目录
     output: {//输出
         path: __dirname + '/build',//输出路径
-        filename: 'bundle.js'//输出文件名
+        filename: 'bundle.js',//输出文件名
     },
     module: {//添加loader
         loaders: [

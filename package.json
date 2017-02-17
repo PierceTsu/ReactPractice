@@ -32,6 +32,9 @@
   },
   "dependencies": {
     "antd": "^2.7.1",
+    "compression": "^1.6.2",
+    "express": "^4.14.1",
+    "if-env": "^1.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
