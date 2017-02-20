@@ -13,6 +13,7 @@ export default class App extends Component {
                     <li><NavLink to="/" onlyActiveOnIndex>Home</NavLink></li>
                     <li><NavLink to="/repos">Repos</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
+                    <li><NavLink to="/calc">Calc</NavLink></li>
                 </ul>
                 {this.props.children}
             </div>

@@ -8,6 +8,7 @@ import Home from '../modules/Home';
 import Repos from '../modules/Repos';
 import Repo from '../modules/Repo';
 import About from '../modules/About';
+import Calculator from '../modules/Calculater';
 
 const RouterConfig = (
     <Router history={hashHistory}>
@@ -17,6 +18,7 @@ const RouterConfig = (
                 <Route path="/repos/:userName/:repoName" component={Repo}/>
             </Route>
             <Route path="/about" component={About}/>
+            <Route path="/calc" component={Calculator}/>
         </Route>
     </Router>
 );
