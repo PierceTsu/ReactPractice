@@ -4,6 +4,8 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {ADD, MINUS} from '../Action/index';
+import {Button} from 'antd';
+import '../css/calculate.css';
 
 class Calculator extends Component {
     render() {
@@ -11,11 +13,13 @@ class Calculator extends Component {
         const {value, onIncreaseClick, onDecreaseClick} = this.props;
 
         return (
-            <div>
-                <p>{value}</p>
-                <button onClick={onIncreaseClick}> + </button>
-                {' '}
-                <button onClick={onDecreaseClick}> - </button>
+            <div className="container">
+                <h2 className="show_text">count: {value}</h2>
+                <div className="btn">
+                    <Button type="primary" onClick={onIncreaseClick}> + </Button>
+                    {' '}
+                    <Button type="primary" onClick={onDecreaseClick}> - </Button>
+                </div>
             </div>
         )
     }
@@ -30,7 +34,7 @@ const mapDispatchToProps = dispatch => {
         onIncreaseClick: () => dispatch({
             type: ADD
         }),
-        onDecreaseClick:()=> dispatch({
+        onDecreaseClick: () => dispatch({
             type: MINUS
         })
     }

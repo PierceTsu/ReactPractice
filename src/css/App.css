@@ -1,0 +1,9 @@
+@import '~antd/dist/antd.css';
+
+.container_out{
+    margin: 20px;
+}
+
+.show_footer{
+    text-align: center;
+}

@@ -26,7 +26,18 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader?modules' //!在于使同一文件能够使用不同类型的loader
+                // include:[
+                //     /src/,
+                //     '/node_modules/antd/dist/'
+                // ],
+                loader: 'style-loader!css-loader' //!在于使同一文件能够使用不同类型的loader
+            },
+            {
+                test: /\.less$/,
+                // include:[
+                //     '/node_modules/antd/dist/'
+                // ],
+                loader: 'css-loader!less-loader'
             }
 
         ]
