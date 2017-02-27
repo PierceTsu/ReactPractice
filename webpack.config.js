@@ -45,9 +45,11 @@ module.exports = {
     ],
     //服务器依赖包配置
     devServer: {
-        contentBase: "./public",//本地服务器所加载的页面所在的目录
-        colors: true,//终端中输出结果为彩色
+        contentBase: "./build",//本地服务器所加载的页面所在的目录
         historyApiFallback: true,//不跳转
+        host:'0.0.0.0',
+        port:8866,
+        hot: true,
         inline: true//实时刷新
     }
 };
