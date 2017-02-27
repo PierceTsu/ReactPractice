@@ -11,7 +11,7 @@ module.exports = {
     entry: __dirname + '/src/js/main.js',//“__dirname”是node.js中的一个全局变量，它指向当前执行脚本所在的目录
     output: {//输出
         path: __dirname + '/build',//输出路径
-        filename: 'bundle.js'//输出文件名
+        filename: 'bundle.js',//输出文件名
     },
     module: {//添加loader
         loaders: [
@@ -26,7 +26,18 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader?modules' //!在于使同一文件能够使用不同类型的loader
+                // include:[
+                //     /src/,
+                //     '/node_modules/antd/dist/'
+                // ],
+                loader: 'style-loader!css-loader' //!在于使同一文件能够使用不同类型的loader
+            },
+            {
+                test: /\.less$/,
+                // include:[
+                //     '/node_modules/antd/dist/'
+                // ],
+                loader: 'css-loader!less-loader'
             }
 
         ]
@@ -36,11 +47,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: __dirname + "/src/html/index.tmpl.html"
         }),
-        new uglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        }),
+        // new uglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
         new webpack.HotModuleReplacementPlugin()//热加载插件
     ],
     //服务器依赖包配置
