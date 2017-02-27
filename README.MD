@@ -12,7 +12,6 @@
 ### 打包
 * 项目根目录下`npm install`
 * 打包: `npm build`,生成build文件夹
-* 打包: `npm start`
 
 ### 参考示例
 #### Redux
